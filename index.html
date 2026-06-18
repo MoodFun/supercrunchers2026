@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Can You Beat the Model?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Pixelify+Sans:wght@400;700&family=Press+Start+2P&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="app">
+
+    <!-- ══ GLOBAL HEADER (shared across all pages) ══ -->
+    <div class="global-header">
+      <span class="gh-left">OHM270</span>
+      <span class="gh-right">2026</span>
+    </div>
+    <div class="global-subheader">
+      <span class="gh-deco">&#9646;&#9646;&#9646;</span>
+      <span class="gh-brand">Supercrunchers</span>
+      <span class="gh-deco">&#9646;&#9646;&#9646;</span>
+    </div>
+
+    <!-- ══════════════ PAGE 1: HOME ══════════════ -->
+    <section id="page-home" class="page page--home active">
+
+      <div class="home-content">
+
+        <div class="section-eyebrow">
+          <span class="eyebrow-text">TU/e HTI PRESENTS</span>
+          <span class="eyebrow-line"></span>
+        </div>
+
+        <h1 class="hero-title" aria-label="Can you beat the model?">
+          <span class="word-can">CAN</span>
+          <span class="word-you">YOU</span>
+          <span class="word-beat">BEAT</span>
+          <span class="word-the">THE</span>
+          <span class="word-model model-word">MODEL?</span>
+        </h1>
+
+        <div class="marquee-wrapper">
+          <div class="marquee-track">
+            <span class="marquee-text">You are going to predict 5 Movie IMDb scores . &nbsp;&nbsp;&nbsp;&nbsp;At the
+              same time, our GBR model is going to predict as well . &nbsp;&nbsp;&nbsp;&nbsp;You are going to predict 5
+              Movie IMDb scores.&nbsp;&nbsp;&nbsp;&nbsp;</span>
+          </div>
+        </div>
+
+        <div class="genre-tags">
+          <span class="genre-tag">Comedy</span>
+          <span class="genre-tag">Crime</span>
+          <span class="genre-tag">Action</span>
+          <span class="genre-tag">Horror</span>
+          <span class="genre-tag">Drama</span>
+        </div>
+
+        <div class="home-buttons">
+          <button id="btn-play" class="btn btn--filled">&gt; PLAY NOW</button>
+          <button id="btn-instruction" class="btn btn--outline">INSTRUCTION</button>
+        </div>
+
+      </div>
+
+      <div class="page-dots">
+        <span class="dot dot--active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+    </section>
+
+    <!-- ══════════════ INSTRUCTION MODAL ══════════════ -->
+    <div id="modal-instruction" class="modal-overlay" hidden>
+      <div class="modal-box">
+        <div class="modal-header">
+          <span class="modal-title">HOW TO PLAY</span>
+          <button id="btn-close-modal" class="modal-close">✕</button>
+        </div>
+        <div class="modal-body">
+          <p>1. You will see 5 movies with their details.</p>
+          <p>2. Guess the IMDb score for each movie (0.0 – 10.0).</p>
+          <p>3. Compare your accuracy against an AI model.</p>
+          <p>4. Lower average error = better predictions!</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════ PAGE 2: MOVIES ══════════════ -->
+    <section id="page-movies" class="page page--movies">
+
+      <div id="movies-list" class="movies-list">
+        <!-- JS renders movie cards here -->
+      </div>
+
+      <div class="see-results-wrapper">
+        <p id="error-msg" class="error-msg" aria-live="polite"></p>
+        <button id="btn-see-results" class="btn btn--filled">&gt; SEE RESULTS</button>
+      </div>
+
+      <div class="page-dots">
+        <span class="dot"></span>
+        <span class="dot dot--active"></span>
+        <span class="dot"></span>
+      </div>
+
+    </section>
+
+    <!-- ══════════════ PAGE 3: RESULTS ══════════════ -->
+    <section id="page-results" class="page page--results">
+
+      <div class="results-content">
+
+        <div class="chart-area">
+          <canvas id="result-chart"></canvas>
+        </div>
+
+        <div class="chart-legend">
+          <div class="legend-item">
+            <span class="legend-icon legend-icon--user"></span>
+            <span class="legend-label">Your prediction</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon legend-icon--model"></span>
+            <span class="legend-label">Model's prediction</span>
+          </div>
+          <div class="legend-item">
+            <span class="legend-icon legend-icon--actual"></span>
+            <span class="legend-label">Actual IMDb score</span>
+          </div>
+        </div>
+
+        <div class="error-summary">
+          <p class="error-line">Your Average Error: <span id="user-error">—</span></p>
+          <p class="error-line">The model's Average Error: <span id="model-error">—</span></p>
+        </div>
+
+        <div class="results-btn-wrapper">
+          <button id="btn-home" class="btn btn--filled">&gt; BACK TO HOME PAGE</button>
+        </div>
+
+      </div>
+
+      <div class="page-dots">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot dot--active"></span>
+      </div>
+
+    </section>
+
+  </div><!-- /.app -->
+
+  <script src="script.js"></script>
+</body>
+
+</html>
