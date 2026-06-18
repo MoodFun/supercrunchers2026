@@ -11,7 +11,7 @@ const movies = [
     duration: 122,
     actors: ["Joaquin Phoenix", "Robert De Niro", "Zazie Beetz"],
     poster: "./pics/Joker.jpg",
-    actualScore: 8.4
+    actualScore: 8.5
   },
   {
     title: "Tenet",
@@ -22,7 +22,7 @@ const movies = [
     duration: 150,
     actors: ["Elizabeth Debicki", "Robert Pattinson", "John David Washington"],
     poster: "./pics/Tenet.jpg",
-    actualScore: 7.3
+    actualScore: 7.9
   },
   {
     title: "The Nun",
@@ -55,11 +55,11 @@ const movies = [
     duration: 119,
     actors: ["Dean-Charles Chapman", "George MacKay", "Daniel Mays"],
     poster: "./pics/1917.jpg",
-    actualScore: 8.2
+    actualScore: 8.3
   }
 ];
 
-const modelPredictions = [7.9, 7.2, 6.0, 7.2, 7.6];
+const modelPredictions = [6.5, 6.5, 5.8, 7.1, 6.8];
 
 const ORDINALS = ["ONE", "TWO", "THREE", "FOUR", "FIVE"];
 const ORDINALS_AXIS = ["1st", "2nd", "3rd", "4th", "5th"];
@@ -268,7 +268,7 @@ function drawChart(actuals) {
   ctx.stroke();
 
   /* Y axis labels & ticks */
-  const PIXEL_FONT = "7px 'Press Start 2P', monospace";
+  const PIXEL_FONT = "8px 'Press Start 2P', monospace";
   const JERSEY_FONT = "11px 'Jersey 10', sans-serif";
 
   ctx.fillStyle = "#0a0a0a";
@@ -370,8 +370,8 @@ function drawChart(actuals) {
     ctx.lineWidth = 1.5;
     ctx.setLineDash([]);
     ctx.beginPath();
-    ctx.moveTo(cx + 1, uy);
-    ctx.lineTo(cx + 3, my + 2);
+    ctx.moveTo(cx, uy);
+    ctx.lineTo(cx, my);
     ctx.stroke();
   });
 }
